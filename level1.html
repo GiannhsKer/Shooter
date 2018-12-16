@@ -306,17 +306,17 @@ body {
 				}	
 			};
 
-			boss.fire = function() {
+			boss.fire =function(){
 				var bulletSpeed = 400;
 				for (let i = 0; i < 3; ++i) {
-					enemyBullet = enemy3Bullet.getFirstExists(false);
+					enemyBullet = bossBullet.getFirstExists(false);
 					if (enemyBullet && this.x && this.y) {
-						enemyBullet.reset(this.x, (this.y - 20 - (80*i)) + this.height / 2);
-						var angle = game.physics.arcade.moveToObject(enemyBullet, player, bulletSpeed);
-						enemyBullet.angle = game.math.radToDeg(angle);
+					    enemyBullet.reset(this.x, (this.y - 20 - (30*i)) + this.height / 2);
+					    var angle = game.physics.arcade.moveToObject(enemyBullet, player, bulletSpeed);
+					    enemyBullet.angle = game.math.radToDeg(angle);
 					}
-				}
-			};
+			    }
+			}
 
 			boss.update = function() {
 				if (!boss.alive) return;
